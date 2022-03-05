@@ -28,27 +28,39 @@ const CountBlock = styled.span`
   font-weight: bold;
   font-size: 24px;
 `;
-const SubText = styled.span`
-  color: rgb(123, 128, 154);
-  font-size: 14px;
+
+const SubTextContainerBlock = styled.div`
   border-top: 0.5px solid rgba(123, 128, 154, 0.25);
   padding-top: 10px;
+`;
+const SubTextBlock = styled.span`
+  color: rgb(123, 128, 154);
+  font-size: 14px;
+`;
+const SubTextNumBlock = styled.span`
+  color: rgb(76, 175, 80);
+  font-size: 14px;
+  font-weight: 700;
 `;
 
 type CardProps = {
   title: string;
   count: number;
   subText: string;
+  subTextNum?: number;
 };
 
-function Card({ title, count, subText }: CardProps) {
+function Card({ title, count, subText, subTextNum }: CardProps) {
   return (
     <ContainerBlock>
       <TopBoxBlock>
         <TitleBlock>{title}</TitleBlock>
         <CountBlock>{count}</CountBlock>
       </TopBoxBlock>
-      <SubText>{subText}</SubText>
+      <SubTextContainerBlock>
+        <SubTextNumBlock>{`${subTextNum}% `}</SubTextNumBlock>
+        <SubTextBlock>{subText}</SubTextBlock>
+      </SubTextContainerBlock>
     </ContainerBlock>
   );
 }

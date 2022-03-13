@@ -13,12 +13,13 @@ import {
 import { Line } from 'react-chartjs-2';
 import faker from '@faker-js/faker';
 
-interface IChartContainer {
-  width: number;
-}
+// interface IChartContainer {
+//   width: number;
+// }
+
 // chart 특성상 비율에 맞춰져서 움직이는듯
-const ChartContainer = styled.div<IChartContainer>`
-  width: ${(props) => `${props.width}px`};
+// const ChartContainer = styled.div<IChartContainer>`
+const ChartContainer = styled.div`
   background: linear-gradient(195deg, rgb(73, 163, 241), rgb(26, 115, 232));
   border-radius: 10px;
   padding: 10px;
@@ -63,21 +64,12 @@ export const data = {
   ]
 };
 
-type ChartProps = {
-  width: number;
-};
-
-function Chart({ width }: ChartProps) {
+function Chart() {
   return (
-    <ChartContainer width={width}>
+    <ChartContainer>
       <Line options={options} data={data} />
     </ChartContainer>
   );
 }
 
 export default Chart;
-
-// [add] chart 뒷 배경 색 지정
-// [modify] chart label color -> y, x축 글씨 색상을 수정 못하겠..
-// [add] line 차트 말고 bar 형태 차트 하나 더 추가
-// [add] table 컴포넌트 제작

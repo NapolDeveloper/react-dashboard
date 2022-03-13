@@ -5,14 +5,15 @@ const ContainerBlock = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  flex: 1;
   height: 100px;
   border-radius: 10px;
   padding: 8px 16px;
-  box-shadow: rgb(0 0 0 / 10%) 0rem 0.25rem 0.375rem -0.0625rem, rgb(0 0 0 / 6%) 0rem 0.125rem 0.25rem -0.0625rem;
+  box-shadow: rgb(0 0 0 / 10%) 0rem 0.25rem 0.375rem -0.0625rem,
+    rgb(0 0 0 / 6%) 0rem 0.125rem 0.25rem -0.0625rem;
   // 후에 지울 값
-  /* background-color: #ffff5b; */
-  width: 200px;
-  margin: 50px 0 0 50px;
+  background-color: #fff;
+  margin: 0 15px;
 `;
 
 const TopBoxBlock = styled.div`

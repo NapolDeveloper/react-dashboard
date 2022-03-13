@@ -9,13 +9,15 @@ const ChartContainerBlock = styled.div`
   flex-direction: row;
   width: 100%;
   margin-top: 10px;
-  padding: 0 10px;
+  justify-content: space-around;
 `;
 
 export default function ChartContainer() {
   return (
     <ChartContainerBlock>
-      <Chart title={'test'} subTitle={'title'} />
+      <Chart title={'Website Views'} subTitle={'Last Campaign Performance'} />
+      <Chart title={'Daily Sales'} subTitle={'(+15%) increase in today sales.'} />
+      <Chart title={'Completed Tasks'} subTitle={'Last Campaign Performance'} />
     </ChartContainerBlock>
   );
 }

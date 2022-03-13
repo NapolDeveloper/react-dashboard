@@ -1,9 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import GlobalStyle from './styles/GlobalStyle';
 
 import Sidebar from './components/Sidebar/Sidebar';
+import theme from './theme';
 
 // pages
 import Dashboard from './pages/Dashboard';
@@ -18,7 +19,7 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-  background-color: #a9ffc1;
+  /* background-color: #a9ffc1; */
   flex: 7;
   height: 100%;
   display: flex;
@@ -28,17 +29,19 @@ const Content = styled.div`
 
 function App() {
   return (
-    <BrowserRouter>
-      <Container>
-        <GlobalStyle />
-        <Sidebar />
-        <Content>
-          <Routes>
-            <Route path='/dashboard' element={<Dashboard />} />
-          </Routes>
-        </Content>
-      </Container>
-    </BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <Container>
+          <GlobalStyle />
+          <Sidebar />
+          <Content>
+            <Routes>
+              <Route path='/dashboard' element={<Dashboard />} />
+            </Routes>
+          </Content>
+        </Container>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

@@ -6,7 +6,29 @@ import Chart from '../Chart/Chart';
 
 const ChartCardContainer = styled.div`
   flex: 1;
-  /* background-color: aliceblue; */
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0 15px;
+  box-shadow: ${(props) => props.theme.card.boxShadow};
+`;
+
+const ChartCardTextBox = styled.div`
+  width: 100%;
+  padding: 24px 8px 8px;
+`;
+
+const ChartCardTitle = styled.div`
+  font-size: 16px;
+  font-weight: bold;
+`;
+const ChartCardSubTitle = styled.div`
+  font-size: 14px;
+  color: rgb(123, 128, 154);
+`;
+const Test = styled.div`
+  border-top: 0.5px solid rgba(123, 128, 154, 0.25);
+  margin-top: 8px;
 `;
 
 type ChartCardProps = {
@@ -17,8 +39,12 @@ type ChartCardProps = {
 export default function ChartCard({ title, subTitle }: ChartCardProps) {
   return (
     <ChartCardContainer>
-      <Chart />
-      <></>
+      <Chart width={200} />
+      <ChartCardTextBox>
+        <ChartCardTitle>{title}</ChartCardTitle>
+        <ChartCardSubTitle>{subTitle}</ChartCardSubTitle>
+        <Test></Test>
+      </ChartCardTextBox>
     </ChartCardContainer>
   );
 }

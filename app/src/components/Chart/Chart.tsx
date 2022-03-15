@@ -20,9 +20,9 @@ interface IChartContainer {
 // chart 특성상 비율에 맞춰져서 움직이는듯
 const ChartContainer = styled.div<IChartContainer>`
   width: 100%;
-  /* background: linear-gradient(195deg, rgb(73, 163, 241), rgb(26, 115, 232)); */
-  background: linear-gradient(195deg, rgb(236, 64, 122), rgb(216, 27, 96));
-  border-radius: 10px;
+  background: linear-gradient(195deg, rgb(73, 163, 241), rgb(26, 115, 232));
+  /* background: linear-gradient(195deg, rgb(236, 64, 122), rgb(216, 27, 96)); */
+  border-radius: ${(props) => props.theme.card.borderRadius};
   padding: 10px;
 `;
 

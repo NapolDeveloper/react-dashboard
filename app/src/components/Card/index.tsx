@@ -7,7 +7,7 @@ const ContainerBlock = styled.div`
   justify-content: space-around;
   flex: 1;
   height: 100px;
-  border-radius: 10px;
+  border-radius: ${(props) => props.theme.card.borderRadius};
   padding: 8px 16px;
   box-shadow: ${(props) => props.theme.card.boxShadow};
   background-color: #fff;

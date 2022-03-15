@@ -8,6 +8,7 @@ import theme from './theme';
 
 // pages
 import Dashboard from './pages/Dashboard';
+import Favorites from './pages/Favorites';
 
 const Container = styled.div`
   width: 100%;
@@ -15,12 +16,12 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   background-color: lightblue;
-  padding: 10px;
+  padding: 20px;
 `;
 
 const Content = styled.div`
   /* background-color: #a9ffc1; */
-  flex: 7;
+  flex: 7; // sidebar = flex 1
   height: 100%;
   display: flex;
   justify-content: center;
@@ -37,6 +38,7 @@ function App() {
           <Content>
             <Routes>
               <Route path='/dashboard' element={<Dashboard />} />
+              <Route path='/favorites' element={<Favorites />} />
             </Routes>
           </Content>
         </Container>

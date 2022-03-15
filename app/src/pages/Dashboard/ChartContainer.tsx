@@ -8,7 +8,7 @@ const ChartContainerBlock = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  margin-top: 10px;
+  margin-top: ${(props) => props.theme.card.marginTop};
   justify-content: space-around;
 `;
 

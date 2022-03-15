@@ -7,10 +7,11 @@ import TableTitle from '../../components/BasicTable/TableTitle';
 
 const TableContainerBlock = styled.div`
   width: calc(100%-30px);
-  /* padding: ${(props) => props.theme.card.padding}; */
-  box-shadow: ${(props) => props.theme.card.boxShadow};
-  margin: 10px 15px;
   background-color: white;
+  margin-right: 15px;
+  margin-left: 15px;
+  margin-top: ${(props) => props.theme.card.marginTop};
+  box-shadow: ${(props) => props.theme.card.boxShadow};
   border-radius: ${(props) => props.theme.card.borderRadius};
 `;
 

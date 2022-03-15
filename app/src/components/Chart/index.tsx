@@ -8,7 +8,7 @@ const ChartCardContainer = styled.div`
   flex: 1;
   background-color: white;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: ${(props) => props.theme.card.borderRadius};
   margin: 0 15px;
   box-shadow: ${(props) => props.theme.card.boxShadow};
 `;

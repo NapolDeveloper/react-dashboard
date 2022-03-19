@@ -51,16 +51,23 @@ const LoginButton = styled.button`
 `;
 // types
 type MyFormProps = {
-  onSubmit: (form: { email: string; password: string }) => void;
+  onSubmit: (form: {
+    email: string;
+    password: string;
+    confirmPassword: string;
+    name: string;
+  }) => void;
 };
 
-export default function SignInInput({ onSubmit }: MyFormProps) {
+export default function SignUpInput({ onSubmit }: MyFormProps) {
   const [form, setForm] = useState({
     email: '',
-    password: ''
+    password: '',
+    confirmPassword: '',
+    name: ''
   });
 
-  const { email, password } = form;
+  const { email, password, confirmPassword, name } = form;
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -71,12 +78,24 @@ export default function SignInInput({ onSubmit }: MyFormProps) {
     onSubmit(form);
     setForm({
       email: '',
-      password: ''
+      password: '',
+      confirmPassword: '',
+      name: ''
     }); // 초기화
   };
   return (
     <InputWrap>
       <InputForm onSubmit={handleSubmit}>
+        <InputField
+          required
+          id='standard-required'
+          label='Your name'
+          variant='standard'
+          name='name'
+          value={name}
+          onChange={onChange}
+          placeholder='Type your name'
+        />
         <InputField
           required
           id='standard-required'
@@ -98,7 +117,19 @@ export default function SignInInput({ onSubmit }: MyFormProps) {
           placeholder='Type your password'
           type='password'
         />
-        <LoginButton type='submit'>SIGN IN</LoginButton>
+        <InputField
+          required
+          id='standard-required'
+          label='Confirm Password'
+          variant='standard'
+          name='confirmPassword'
+          value={confirmPassword}
+          onChange={onChange}
+          placeholder='Type your password'
+          type='password'
+        />
+
+        <LoginButton type='submit'>SIGN UP</LoginButton>
       </InputForm>
     </InputWrap>
   );

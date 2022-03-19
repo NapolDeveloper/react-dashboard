@@ -10,6 +10,7 @@ import theme from './theme';
 import Dashboard from './pages/Dashboard';
 import Favorites from './pages/Favorites';
 import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
 
 const Container = styled.div`
   width: 100%;
@@ -45,6 +46,7 @@ function App() {
               <Route path='/dashboard' element={<Dashboard />} />
               <Route path='/favorites' element={<Favorites />} />
               <Route path='/signin' element={<SignIn />} />
+              <Route path='/signup' element={<SignUp />} />
             </Routes>
           </Content>
         </Container>

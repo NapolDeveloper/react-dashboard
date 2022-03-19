@@ -11,8 +11,8 @@ const Container = styled.div`
 
 export default function SignInForm() {
   const onSubmit = (form: { email: string; password: string }) => {
-    console.log(form.email);
-    console.log(form.password);
+    console.log(form);
+    // axios로 서버와 통신
   };
   return (
     <Container>

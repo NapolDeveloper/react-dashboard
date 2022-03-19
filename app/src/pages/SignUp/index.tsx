@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import SignInForm from '../../components/SignInForm';
+import SignUpForm from '../../components/SignUpForm';
 
 // components
 
@@ -11,10 +11,10 @@ const Container = styled.div`
   justify-content: center;
 `;
 
-export default function SignIn() {
+export default function SignUp() {
   return (
     <Container>
-      <SignInForm />
+      <SignUpForm />
     </Container>
   );
 }

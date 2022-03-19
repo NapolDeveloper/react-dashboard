@@ -11,6 +11,12 @@ const theme = {
   },
   sidebar: {
     borderRadius: '10px'
+  },
+  signin: {
+    borderRadius: '10px',
+    boxShadow:
+      'rgb(0 0 0 / 10%) 0rem 0.25rem 0.375rem -0.0625rem, rgb(0 0 0 / 6%) 0rem 0.125rem 0.25rem -0.0625rem',
+    padding: '15px'
   }
 };
 

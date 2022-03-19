@@ -9,6 +9,7 @@ import theme from './theme';
 // pages
 import Dashboard from './pages/Dashboard';
 import Favorites from './pages/Favorites';
+import SignIn from './pages/SignIn';
 
 const Container = styled.div`
   width: 100%;
@@ -26,6 +27,10 @@ const Content = styled.div`
   display: flex;
   justify-content: center;
   padding: 20px 0;
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 function App() {
@@ -39,6 +44,7 @@ function App() {
             <Routes>
               <Route path='/dashboard' element={<Dashboard />} />
               <Route path='/favorites' element={<Favorites />} />
+              <Route path='/signin' element={<SignIn />} />
             </Routes>
           </Content>
         </Container>

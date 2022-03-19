@@ -26,9 +26,10 @@ type HandleRouteProps = {
 export default function SidebarItem({ route, title }: SidebarItemProps) {
   const navigate = useNavigate();
 
-  const handleRoute = (path: string) => {
+  // const handleRoute = (path: string) => {
+  const handleRoute = ({ path }: HandleRouteProps) => {
     navigate(`/${path}`);
   };
 
-  return <ItemContainer onClick={() => handleRoute(route)}>{title}</ItemContainer>;
+  return <ItemContainer onClick={() => handleRoute({ path: route })}>{title}</ItemContainer>;
 }

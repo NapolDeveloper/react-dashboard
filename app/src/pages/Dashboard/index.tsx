@@ -16,6 +16,7 @@ export default function Dashboard() {
       <CardContainer />
       <ChartContainer />
       <TableContainer />
+      <TableContainer />
     </Container>
   );
 }

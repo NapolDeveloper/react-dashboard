@@ -15,14 +15,36 @@ const Container = styled.div`
   padding: 10px;
   min-width: 250px;
 `;
+const ItemContainer = styled.div`
+  padding: 10px;
+`;
+
+const SidebarTitleBlock = styled.div`
+  border-bottom: 0.5px solid rgba(123, 128, 154, 0.25);
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+`;
 
 export default function Sidebar() {
   return (
     <Container>
-      <SidebarItem route={'dashboard'} title={'Dashboard'} />
-      <SidebarItem route={'favorites'} title={'Favorites'} />
-      <SidebarItem route={'test'} title={'Test'} />
-      <SidebarItem route={'test2'} title={'Test2'} />
+      <SidebarTitle />
+      <ItemContainer>
+        <SidebarItem route={'dashboard'} title={'Dashboard'} />
+        <SidebarItem route={'favorites'} title={'Favorites'} />
+        <SidebarItem route={'signin'} title={'Sign In'} />
+        <SidebarItem route={'signup'} title={'Sign Up'} />
+      </ItemContainer>
     </Container>
   );
 }
+
+const SidebarTitle = () => {
+  return <SidebarTitleBlock>STOCK DASHBOARD</SidebarTitleBlock>;
+};

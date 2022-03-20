@@ -1,6 +1,9 @@
 import { combineReducers } from 'redux';
+import dayStock from './dayStock';
 
-const rootReducer = combineReducers({});
+const rootReducer = combineReducers({
+  dayStock
+});
 
 export default rootReducer;
 

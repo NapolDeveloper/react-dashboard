@@ -14,7 +14,7 @@ import { Line } from 'react-chartjs-2';
 import faker from '@faker-js/faker';
 
 interface IChartContainer {
-  width: number;
+  // width: number;
 }
 
 // chart 특성상 비율에 맞춰져서 움직이는듯
@@ -32,8 +32,7 @@ export const options = {
   responsive: true,
   plugins: {
     legend: {
-      position: 'bottom' as const,
-      color: 'rgb(255,255,255)'
+      display: false
     },
     title: {
       display: true,
@@ -69,7 +68,7 @@ type ChartProps = {
 };
 function Chart({ width }: ChartProps) {
   return (
-    <ChartContainer width={width}>
+    <ChartContainer>
       <Line options={options} data={data} />
     </ChartContainer>
   );

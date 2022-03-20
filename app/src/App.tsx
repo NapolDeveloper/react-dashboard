@@ -1,5 +1,6 @@
 import React from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider as StyledThemeProvider } from 'styled-components';
+import { StyledEngineProvider, ThemeProvider as MuiThemeProvider } from '@mui/material';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import GlobalStyle from './styles/GlobalStyle';
 
@@ -36,22 +37,26 @@ const Content = styled.div`
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Container>
-          <GlobalStyle />
-          <Sidebar />
-          <Content>
-            <Routes>
-              <Route path='/dashboard' element={<Dashboard />} />
-              <Route path='/favorites' element={<Favorites />} />
-              <Route path='/signin' element={<SignIn />} />
-              <Route path='/signup' element={<SignUp />} />
-            </Routes>
-          </Content>
-        </Container>
-      </BrowserRouter>
-    </ThemeProvider>
+    <StyledEngineProvider injectFirst>
+      <StyledThemeProvider theme={theme}>
+        <MuiThemeProvider theme={theme}>
+          <BrowserRouter>
+            <Container>
+              <GlobalStyle />
+              <Sidebar />
+              <Content>
+                <Routes>
+                  <Route path='/dashboard' element={<Dashboard />} />
+                  <Route path='/favorites' element={<Favorites />} />
+                  <Route path='/signin' element={<SignIn />} />
+                  <Route path='/signup' element={<SignUp />} />
+                </Routes>
+              </Content>
+            </Container>
+          </BrowserRouter>
+        </MuiThemeProvider>
+      </StyledThemeProvider>
+    </StyledEngineProvider>
   );
 }
 
